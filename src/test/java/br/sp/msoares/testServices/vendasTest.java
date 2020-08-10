@@ -10,9 +10,6 @@ import br.sp.msoares.services.VendasServices;
 
 import br.sp.msoares.utils.DataUtils;
 
-/**
- * Unit test for simple App.
- */
 public class vendasTest 
 {
  

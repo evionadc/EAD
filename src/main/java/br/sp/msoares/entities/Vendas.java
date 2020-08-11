@@ -1,28 +1,18 @@
 package br.sp.msoares.entities;
 
 import java.util.Date;
+import java.util.List;
 
 public class Vendas {
 
-    private Produtos produto;
+    private List<Produtos> produto;
     private Clientes cliente;
+    private double valorVenda;
     private Date dataVenda;
     private Date datalimitedevolucao;
     
 
-    /**
-     * @return Produtos return the produto
-     */
-    public Produtos getProduto() {
-        return produto;
-    }
-
-    /**
-     * @param produto the produto to set
-     */
-    public void setProduto(Produtos produto) {
-        this.produto = produto;
-    }
+    
 
     /**
      * @return Clientes return the cliente
@@ -66,6 +56,36 @@ public class Vendas {
      */
     public void setDatalimitedevolucao(Date datalimitedevolucao) {
         this.datalimitedevolucao = datalimitedevolucao;
+    }
+
+
+    /**
+     * @return List<Produtos> return the produto
+     */
+    public List<Produtos> getProduto() {
+        return produto;
+    }
+
+    /**
+     * @param produto the produto to set
+     */
+    public void setProduto(List<Produtos> produto) {
+        this.produto = produto;
+    }
+
+
+    /**
+     * @return double return the valorVenda
+     */
+    public double getValorVenda() {
+        return valorVenda;
+    }
+
+    /**
+     * @param valorVenda the valorVenda to set
+     */
+    public void setValorVenda(double valorVenda) {
+        this.valorVenda = valorVenda;
     }
 
 }

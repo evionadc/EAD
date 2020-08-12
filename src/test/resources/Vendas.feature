@@ -4,18 +4,23 @@ Eu, enquanto vendendor, quero realizar uma venda, registrando o produto vendido 
 
 Critérios de aceite​
 
-Os produtos possuem nome, valor e quantidade de estoque​
-
 //Feito 
 Não pode ser vendido produtos sem estoque​
-//TODO
+//Feito
 Todos os campos são obrigatórios.​
-//TODO
+//Feito
 O cliente tem até 3 dias para devolver o produto.​
-//TODO
-Um clinete pode levar mais de um produto.
+
+Se a compra for feita em um sexta, a o dia de devolução deve cair numa segunda.
+
+//Feito
+Um cliente pode levar mais de um produto.
 
 Uma venda é a soma de todos os valores de todos os produtos
+
+O cliente levar 3 produtos ou mais, o de menor valor sai de graça.
+
+
 
 ​
 

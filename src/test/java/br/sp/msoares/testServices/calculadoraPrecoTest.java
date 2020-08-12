@@ -36,7 +36,7 @@ public class calculadoraPrecoTest {
     @Parameter(value = 1)
     public Double valorvenda;
 
-     @Parameter(value=2)
+    @Parameter(value=2)
      public String cenario;
 
     private static Produtos produto1 = umProduto().build();

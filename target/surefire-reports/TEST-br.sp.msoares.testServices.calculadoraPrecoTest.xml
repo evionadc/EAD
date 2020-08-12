@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="br.sp.msoares.testServices.calculadoraPrecoTest" time="0.054" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.sp.msoares.testServices.calculadoraPrecoTest" time="0.06" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.6+8-LTS"/>
@@ -65,8 +65,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="br.sp.msoares.testServices.calculadoraPrecoTest" name="deveCalcularoValordaVenda[Não deve ter desconto]" time="0.054"/>
+  <testcase classname="br.sp.msoares.testServices.calculadoraPrecoTest" name="deveCalcularoValordaVenda[Não deve ter desconto]" time="0.059"/>
   <testcase classname="br.sp.msoares.testServices.calculadoraPrecoTest" name="deveCalcularoValordaVenda[O valor do produto 3 deve ser zerado]" time="0"/>
   <testcase classname="br.sp.msoares.testServices.calculadoraPrecoTest" name="deveCalcularoValordaVenda[O valor do produto 2 deve ser zerado]" time="0"/>
-  <testcase classname="br.sp.msoares.testServices.calculadoraPrecoTest" name="deveCalcularoValordaVenda[7 produtos com 200 de desconto do produto 3]" time="0"/>
+  <testcase classname="br.sp.msoares.testServices.calculadoraPrecoTest" name="deveCalcularoValordaVenda[7 produtos com 200 de desconto do produto 3]" time="0.001"/>
 </testsuite>

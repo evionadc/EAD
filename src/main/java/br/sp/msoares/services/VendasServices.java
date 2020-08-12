@@ -37,7 +37,7 @@ public class VendasServices{
 
         venda.setProduto(produtos);
         venda.setCliente(cliente);
-        venda.setDataVenda(new Date());
+        venda.setDataVenda(obterData());
         Date datadevolucao = new Date();
         datadevolucao = DataUtils.adicionarDias(datadevolucao, 3);
         if(DataUtils.verificarDiaSemana(datadevolucao, Calendar.SUNDAY)){
@@ -52,6 +52,10 @@ public class VendasServices{
 
         return venda;
 
+    }
+
+    public Date obterData(){
+        return new Date();
     }
 
     private double calcularValor(List<Produtos> produtos){

@@ -27,6 +27,8 @@ import br.sp.msoares.services.VendasServices;
 import br.sp.msoares.utils.DataUtils;
 
 public class vendasTest {
+
+    
     private VendasServices services;
 
     @Before
@@ -89,7 +91,7 @@ public class vendasTest {
             Assert.assertEquals(e.getMessage(), "Cliente indefinido");
         }
     }
-
+/*
     @Test
     public void naoPodeDevolvernumDomingo() throws produtoSemEstoqueException, vendasServicesException {
         Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.THURSDAY));
@@ -101,7 +103,7 @@ public class vendasTest {
 
         assertThat(venda.getDatalimitedevolucao(), caiEm(Calendar.MONDAY));
 
-     }
+     }*/
   
     
 }

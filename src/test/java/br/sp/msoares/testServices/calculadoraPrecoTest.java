@@ -15,19 +15,35 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
 
+import br.sp.msoares.dao.locacaoDAO;
 import br.sp.msoares.entities.Clientes;
 import br.sp.msoares.entities.Produtos;
 import br.sp.msoares.entities.Vendas;
 import br.sp.msoares.services.VendasServices;
+import br.sp.msoares.services.spcService;
+import br.sp.msoares.utils.DataUtils;
 
 @RunWith(Parameterized.class)
 public class calculadoraPrecoTest {
+
+    @Mock
+    locacaoDAO dao;
+
+    @Mock
+    spcService spc;
+
+    @Spy @InjectMocks
     VendasServices service;
 
     @Before
     public void setup() {
-        service = new VendasServices();
+        MockitoAnnotations.initMocks(this);
     }
 
     @Parameter
@@ -62,8 +78,9 @@ public class calculadoraPrecoTest {
         // cenario
         Clientes cliente = umCliente().build();
 
+        Mockito.doReturn(DataUtils.obterData(12, 8,2020)).when(service).obterData();
 
-        // acao
+        // acao 
         Vendas venda = service.realizarVenda(produtos, cliente);
 
         // verificacao

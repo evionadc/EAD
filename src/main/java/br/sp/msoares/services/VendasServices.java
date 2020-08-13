@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import br.sp.msoares.dao.locacaoDAO;
 import br.sp.msoares.entities.Clientes;
 import br.sp.msoares.entities.Produtos;
 import br.sp.msoares.entities.Vendas;
@@ -13,8 +14,9 @@ import br.sp.msoares.utils.DataUtils;
 
 public class VendasServices{
 
-    public Vendas realizarVenda(List<Produtos> produtos, Clientes cliente) throws produtoSemEstoqueException,
-            vendasServicesException {   
+    private locacaoDAO dao;
+    private spcService spc;
+    public Vendas realizarVenda(List<Produtos> produtos, Clientes cliente) throws Exception {
                 
         if(cliente == null){
 
@@ -25,6 +27,17 @@ public class VendasServices{
             throw new vendasServicesException("Produto indefinido");
         }
 
+        boolean negativado;
+
+        try {
+            negativado = spc.consultarnegativacao(cliente);
+        } catch (Exception e) {
+            throw new Exception("ERRO NO SPC!!!");
+        }
+
+        if(negativado){
+            throw new vendasServicesException("Cliente negativado!");
+        }
 
         for (Produtos produto : produtos) {
             if(produto.getEstoque() == 0){
@@ -38,7 +51,7 @@ public class VendasServices{
         venda.setProduto(produtos);
         venda.setCliente(cliente);
         venda.setDataVenda(obterData());
-        Date datadevolucao = new Date();
+        Date datadevolucao = obterData();
         datadevolucao = DataUtils.adicionarDias(datadevolucao, 3);
         if(DataUtils.verificarDiaSemana(datadevolucao, Calendar.SUNDAY)){
             datadevolucao = DataUtils.adicionarDias(datadevolucao, 1);
@@ -48,7 +61,8 @@ public class VendasServices{
         venda.setValorVenda(calcularValor(produtos));
 
 
-        //TODO Salvar a venda
+        
+        dao.salvar();
 
         return venda;
 
